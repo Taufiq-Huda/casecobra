@@ -1,7 +1,10 @@
 import Image from "next/image";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
-import { Check, Star } from "lucide-react";
+import { ArrowRight, Check, Star } from "lucide-react";
 import Phone from "@/components/Phone";
+import Icons from "@/components/Icons";
+import Link from "next/link";
+import { buttonVariants } from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -100,6 +103,149 @@ export default function Home() {
               <Phone className="w-64" imgSrc="/testimonials/1.jpg" />
             </div>
           </div>
+        </MaxWidthWrapper>
+      </section>
+
+      {/*value proposition section*/}
+      <section className="bg-slate-100 py-14">
+        <MaxWidthWrapper className="flex flex-col items-center gap-16 sm:py-32">
+          <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-6">
+            <h2 className="order-1 mt-2 tracking-tight text-center text-balance !leading-tight font-bold text-5xl md:text-6xl text-gray-600">
+              What our{" "}
+              <span className="relative px-2">
+                customers{" "}
+                <Icons.underline className="hidden sm:block pointer-events-none absolute inset-x-0 -bottom-6 text-green-500" />
+              </span>{" "}
+              say
+            </h2>
+            <img src="/snake-2.png" className="w-24 order-0 lg:order-2" />
+          </div>
+
+          <div className="mx-auto grid max-w-2xl grid-cols-1 px-4 lg:mx-0 lg:max-w-none lg:grid-cols-2 gap-y-16">
+            <div className="flex flex-auto flex-col gap-4 lg:pr-8 xl:20">
+              <div className="flex mb-2 gap-0.5">
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+              </div>
+              <div className="text-lg leading-8">
+                <p>
+                  "The case feels durable and I even got a compliment on the
+                  design. Had the case for two and the half months now and{" "}
+                  <span className="p-0.5 bg-slate-800 text-white">
+                    the image is super clean
+                  </span>
+                  , on the case I had before, the image started fadding
+                  yellow-ish color after"
+                </p>
+              </div>
+              <div className="flex mt-2 gap-4">
+                <img
+                  className="rounded-full h-12 w-12 object-cover"
+                  src="/users/user-1.png"
+                  alt="user"
+                />
+                <div className="flex flex-col">
+                  <p className="font-semibold">Sakib</p>
+                  <div className="flex items-center gap-1.5 text-zinc-600">
+                    <Check className="h-4 w-4 stroke-[3px] text-green-600" />
+                    <p className="text-sm">Verified Puchase</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-auto flex-col gap-4 lg:pr-8 xl:20">
+              <div className="flex mb-2 gap-0.5">
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+              </div>
+              <div className="text-lg leading-8">
+                <p>
+                  "I usually keep my phone together my keeysin my pocket and
+                  that led to some pretty much scratchmark on all of my last
+                  phone cases. This one besides a besarly noticeable scratch on
+                  the corner,{" "}
+                  <span className="p-0.5 bg-slate-800 text-white">
+                    looks brand new after about half a year
+                  </span>
+                  . I dig it"
+                </p>
+              </div>
+              <div className="flex mt-2 gap-4">
+                <img
+                  className="rounded-full h-12 w-12 object-cover"
+                  src="/users/user-4.jpg"
+                  alt="user"
+                />
+                <div className="flex flex-col">
+                  <p className="font-semibold">Mahi</p>
+                  <div className="flex items-center gap-1.5 text-zinc-600">
+                    <Check className="h-4 w-4 stroke-[3px] text-green-600" />
+                    <p className="text-sm">Verified Puchase</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </MaxWidthWrapper>
+      </section>
+
+      <section>
+        <MaxWidthWrapper className="py-4">
+          <div className="mb-12 px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl sm:text-center">
+              <h2 className="order-1 mt-2 tracking-tight text-center text-balance !leading-tight font-bold text-5xl md:text-6xl text-gray-600">
+                Upload your photo to get{" "}
+                <span className="relative px-2 bg-green-600 text-white">your own case </span>{" "}
+                now
+              </h2>
+            </div>
+          </div>
+
+          <div className="mx-auto max-w-6xl px-6 lg:px-8">
+            <div className="relative flex flex-col items-center md:grid grid-cols-2 gap-40">
+              <img className="absolute top-[25rem] md:top-1/2 -translate-y-1/2 z-10 left-1/2 -translate-x-1/2 rotate-90 md:rotate-0" src="/arrow.png"/>
+
+              <div className="relative h-80 md:h-full w-full md:justify-self-end max-w-sm rounded-xl bg-gray-900/5 ring-inset ring-gray-900/10 lg:rounded-2xl">
+                <img src="/horse.jpg" className="rounded-md object-cover bg-white shadow-2xl ring-gray-200/10 h-full w-full" />
+              </div>
+
+              <Phone className="w-60" imgSrc="/horse_phone.jpg"/>
+            </div>
+          </div>
+          <ul className="mt-12 mx-auto max-w-prose sm:text-lg space-y-2 w-fit">
+            <li className="w-fit">
+              <Check className="h-5 w-5 text-green-600 inline mr-1.5"/>
+              High-quality silicon material
+            </li>
+            <li className="w-fit">
+              <Check className="h-5 w-5 text-green-600 inline mr-1.5"/>
+              Scrach and fingerprint resistance coating
+            </li>
+            <li className="w-fit">
+              <Check className="h-5 w-5 text-green-600 inline mr-1.5"/>
+              Wireless charging compatible
+            </li>
+            <li className="w-fit">
+              <Check className="h-5 w-5 text-green-600 inline mr-1.5"/>
+              5-years print warrnnty
+            </li>
+            <div className="flex justify-center">
+              <Link className={
+                buttonVariants({
+                  size: "lg",
+                  className :"mx-auto mt-8"
+                })
+              } href='/configure/upload'>
+                Create your own case now <ArrowRight className="w-4 h-4 ml-1.5"/>
+              </Link>
+            </div>
+          </ul>
         </MaxWidthWrapper>
       </section>
     </div>
