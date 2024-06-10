@@ -195,6 +195,7 @@ export default function Home() {
         </MaxWidthWrapper>
       </section>
 
+      {/*demo section*/}
       <section>
         <MaxWidthWrapper className="py-4">
           <div className="mb-12 px-6 lg:px-8">
